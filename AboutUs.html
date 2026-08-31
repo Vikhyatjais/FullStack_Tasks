@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - Web Dev Project</title>
+  
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f9fa;
+      color: #333333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #555555;
+    }
+
+    #page-wrapper {
+      width: 85%;
+      max-width: 850px;
+      margin: 25px auto;
+    }
+
+    #about-intro {
+      background-color: #ffffff;
+      padding: 15px 20px;
+      border: 1px solid #dddddd;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    .list-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .info-card {
+      flex: 1;
+      min-width: 250px;
+      background-color: rgb(255, 255, 255);
+      border: 1px solid rgb(200, 205, 210);
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    .heading-style {
+      font-size: 18px;
+      color: rgb(41, 128, 185);
+      margin-top: 0;
+      border-bottom: 1px solid rgb(220, 220, 220);
+      padding-bottom: 5px;
+    }
+
+    ul, ol {
+      padding-left: 25px;
+      color: #444444;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .city-list {
+      list-style-type: square;
+    }
+
+    .city-list li {
+      color: #16a085;
+    }
+
+    .movie-list {
+      list-style-type: upper-roman;
+    }
+
+    .movie-list li {
+      color: rgb(142, 68, 173);
+    }
+
+    .info-card:hover {
+      background-color: rgb(245, 248, 250);
+      border-color: rgb(150, 160, 170);
+    }
+
+    .city-list li:first-child {
+      font-weight: bold;
+    }
+
+    .movie-list li:nth-child(even) {
+      color: rgb(192, 57, 43);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>About Our Group</h1>
+    
+  </header>
+
+  <div id="page-wrapper">
+    
+    <div id="about-intro">
+      <h2>Who We Are</h2>
+      <p>
+        Hi! We are a group of students working on frontend web development. This page demonstrates basic styling using element tags, class names, IDs, pseudo-classes, different color codes, and customized lists.
+      </p>
+    </div>
+
+    <div class="list-container">
+      
+      <div class="info-card">
+        <h3 class="heading-style">Cities We Love</h3>
+        <p>Favorite travel spots:</p>
+        <ul class="city-list">
+          <li>Rome</li>
+          <li>Tokyo</li>
+          <li>Paris</li>
+          <li>Iceland</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3 class="heading-style">Favorite Movies</h3>
+        <p>Ranked team favorites:</p>
+        <ol class="movie-list">
+          <li>Interstellar</li>
+          <li>Avengers Endgame</li>
+          <li>Inglorious Bastards</li>
+          <li>Lords of the Rings Trilogy</li>
+        </ol>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
