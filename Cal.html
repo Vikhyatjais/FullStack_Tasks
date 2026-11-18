@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            background-color: #9e9e9e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 320px;
+            border: 2px solid #555;
+        }
+        #screen {
+            width: 100%;
+            height: 60px;
+            font-size: 30px;
+            text-align: right;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            background-color: white;
+            box-sizing: border-box; 
+            padding: 10px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            padding: 20px 0;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 1px solid #555;
+            background-color: #f4f4f4;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        .span-two {
+            grid-column: span 2;
+        }
+
+        /* Colors matching your image */
+        .clear-btn { background-color: #ff9999; }
+        .clear-btn:hover { background-color: #ff7777; }
+        
+        .delete-btn { background-color: #99aaff; }
+        .delete-btn:hover { background-color: #7788ff; }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <!-- The screen where numbers show up -->
+        <input type="text" id="screen" disabled>
+
+        <div class="buttons">
+            <!-- Row 1 -->
+            <button class="span-two clear-btn" onclick="clearScreen()">CLEAR</button>
+            <button class="span-two delete-btn" onclick="deleteLast()">DELETE</button>
+
+            <!-- Row 2 -->
+            <button onclick="addNumber('7')">7</button>
+            <button onclick="addNumber('8')">8</button>
+            <button onclick="addNumber('9')">9</button>
+            <button onclick="addNumber('/')">÷</button>
+
+            <!-- Row 3 -->
+            <button onclick="addNumber('4')">4</button>
+            <button onclick="addNumber('5')">5</button>
+            <button onclick="addNumber('6')">6</button>
+            <button onclick="addNumber('*')">×</button>
+
+            <!-- Row 4 -->
+            <button onclick="addNumber('1')">1</button>
+            <button onclick="addNumber('2')">2</button>
+            <button onclick="addNumber('3')">3</button>
+            <button onclick="addNumber('-')">-</button>
+
+            <!-- Row 5 -->
+            <button onclick="addNumber('.')">.</button>
+            <button onclick="addNumber('0')">0</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="addNumber('+')">+</button>
+        </div>
+    </div>
+
+    <script>
+        let screen = document.getElementById('screen');
+
+        function addNumber(character) {
+            screen.value = screen.value + character;
+        }
+
+     
+        function clearScreen() {
+            screen.value = '';
+        }
+        function deleteLast() {
+            screen.value = screen.value.slice(0, -1);
+        }
+
+        function calculate() {
+    
+    if (screen.value === '') {
+        return;
+    }
+
+    if (screen.value === '404') {
+        screen.value = 'Error Not Found';
+        return; 
+    }
+
+    screen.value = eval(screen.value);
+}
+    </script>
+
+</body>
+</html>
