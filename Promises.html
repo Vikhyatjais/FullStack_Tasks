@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9: Asynchronous Fetch</title>
+    <style>
+        body { font-family: system-ui, sans-serif; padding: 2rem; }
+        button { padding: 8px 16px; cursor: pointer; }
+        #output { margin-top: 1rem; padding: 1rem; border: 1px solid #ccc; display: none; line-height: 1.5; }
+    </style>
+</head>
+<body>
+
+    <h2>Simulate Server Data Fetch</h2>
+    <button id="fetchBtn">Fetch Personal Details</button>
+    <div id="output"></div>
+
+    <script>
+        function simulateDataFetch() {
+            return new Promise((resolve) => {
+                const personalDetails = {
+                    name: "Vikhyat Jaiswal",
+                    university: "GLA University",
+                    major: "Computer Science",
+                    location: "Mathura"
+                };
+
+                setTimeout(() => {
+                    resolve(personalDetails);
+                }, 2000);
+            });
+        }
+
+        document.getElementById('fetchBtn').addEventListener('click', () => {
+            const outputDiv = document.getElementById('output');
+            outputDiv.style.display = 'block';
+            outputDiv.innerText = "Fetching data (2-second delay)...";
+
+            simulateDataFetch().then((data) => {
+                outputDiv.innerHTML = `
+                    <strong>Name:</strong> ${data.name} <br>
+                    <strong>University:</strong> ${data.university} <br>
+                    <strong>Major:</strong> ${data.major} <br>
+                    <strong>Location:</strong> ${data.location}
+                `;
+            });
+        });
+    </script>
+
+</body>
+</html>
